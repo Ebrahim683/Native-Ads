@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        tools:src="@mipmap/ic_launcher" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@id/icon">
+
+        <LinearLayout
+            android:id="@+id/headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/gnt_gray"
+                android:textSize="@dimen/gnt_text_size_large"
+                android:textStyle="bold"
+                tools:text="Test Ad : Google Ads" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/headline"
+            android:layout_toEndOf="@id/icon"
+            android:orientation="horizontal"
+            tools:ignore="NotSibling">
+
+            <TextView
+                android:id="@+id/ad_notification_view"
+                android:layout_width="@dimen/gnt_ad_indicator_width"
+                android:layout_height="@dimen/gnt_ad_indicator_height"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/gnt_ad_indicator_top_margin"
+                android:layout_marginEnd="@dimen/gnt_default_margin"
+                android:background="@drawable/gnt_rounded_corners_shape"
+                android:gravity="center"
+                android:textColor="@color/gnt_ad_green"
+                android:textSize="@dimen/gnt_ad_indicator_text_size"
+                android:textStyle="bold"
+                tools:text="Ad" />
+
+            <RatingBar
+                android:id="@+id/rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/gnt_white"
+                android:lines="1"
+                android:numStars="5"
+                android:stepSize="0.1"
+                android:textColor="@color/gnt_gray"
+                android:textSize="@dimen/gnt_text_size_small" />
+
+            <TextView
+                android:id="@+id/secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/gnt_white"
+                android:gravity="top"
+                android:lines="1"
+                android:textColor="@color/gnt_gray"
+                android:textSize="@dimen/gnt_text_size_small" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/row_two"
+            android:background="@color/gnt_blue"
+            android:lines="1"
+            android:textColor="@color/gnt_white"
+            tools:text="INSTALL" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
