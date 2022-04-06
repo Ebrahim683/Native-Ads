@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginBottom="15dp"
     android:elevation="15dp"
+    android:id="@+id/root"
     android:padding="5dp"
     app:cardCornerRadius="15dp">
 

@@ -1,6 +1,6 @@
-package com.example.nativeads.data.remote
+package com.example.nativeads.data.local.remote
 
-import com.example.nativeads.model.PostModelItem
+import com.example.nativeads.data.model.PostModelItem
 import retrofit2.Response
 import retrofit2.http.GET
 

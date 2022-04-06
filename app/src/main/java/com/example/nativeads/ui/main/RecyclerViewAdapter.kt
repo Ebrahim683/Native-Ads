@@ -9,12 +9,14 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nativeads.R
-import com.example.nativeads.model.PostModelItem
+import com.example.nativeads.data.model.PostModelItem
 import com.google.android.ads.nativetemplates.NativeTemplateStyle
 import com.google.android.ads.nativetemplates.TemplateView
 import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
+
+private const val TAG = "recyclerViewAdapter"
 
 class RecyclerViewAdapter(context: Context) : ListAdapter<PostModelItem, RecyclerView.ViewHolder>(
 	DIFF_UTIL
@@ -23,14 +25,16 @@ class RecyclerViewAdapter(context: Context) : ListAdapter<PostModelItem, Recycle
 	val ITEM_TEXT = 0
 	val ITEM_ADS = 1
 	
-	class TextHolder(view: View) : RecyclerView.ViewHolder(view) {
-		val id = view.findViewById<TextView>(R.id.sample_id)
-		val title = view.findViewById<TextView>(R.id.sample_title)
-		val body = view.findViewById<TextView>(R.id.sample_body)
+	class TextHolder(itemView: View) :
+		RecyclerView.ViewHolder(itemView) {
+		val id = itemView.findViewById<TextView>(R.id.sample_id)
+		val title = itemView.findViewById<TextView>(R.id.sample_title)
+		val body = itemView.findViewById<TextView>(R.id.sample_body)
 		fun bind(postModelItem: PostModelItem) {
 			id.text = "ID : ${postModelItem.id}"
 			title.text = "Title : ${postModelItem.title}"
 			body.text = "Body : ${postModelItem.body}"
+			
 		}
 	}
 	
