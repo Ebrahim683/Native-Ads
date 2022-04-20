@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nativeads.PostsApplication
 import com.example.nativeads.R
+import com.example.nativeads.data.model.PostModelItem
 import com.example.nativeads.utils.Status
 import com.example.nativeads.viewmodel.MainViewModel
 import com.example.nativeads.viewmodelfactory.PostsViewModelFactory
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 //							showPosts()
 //							Toast.makeText(this@MainActivity, "Offline", Toast.LENGTH_SHORT).show()
 //						}
-						showPosts()
+						showPosts(posts)
 					}
 					Status.FAIL -> {
 						Log.d(TAG, "onCreate: Error ${response.message}")
@@ -84,11 +85,18 @@ class MainActivity : AppCompatActivity() {
 		
 	}
 	
-	private suspend fun showPosts() {
-		mainViewModel.showPosts().collect { posts ->
-			if (posts!!.isNotEmpty()) {
-				recyclerViewAdapter.submitList(posts)
-				recyclerViewAdapter.notifyDataSetChanged()
+	private suspend fun showPosts(posts:List<PostModelItem>?) {
+		if (isInternetConnected(this)){
+			recyclerViewAdapter.submitList(posts)
+			recyclerViewAdapter.notifyDataSetChanged()
+			Toast.makeText(this, "Data from online", Toast.LENGTH_SHORT).show()
+		}else{
+			mainViewModel.showPosts().collect { posts ->
+				if (posts!!.isNotEmpty()) {
+					recyclerViewAdapter.submitList(posts)
+					recyclerViewAdapter.notifyDataSetChanged()
+					Toast.makeText(this, "Data from catch", Toast.LENGTH_SHORT).show()
+				}
 			}
 		}
 	}

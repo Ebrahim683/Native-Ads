@@ -4,13 +4,13 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="16"
-6-->F:\NativeAds\nativetemplates\src\main\AndroidManifest.xml
+6-->C:\Users\ebrah\StudioProjects\Native-Ads\nativetemplates\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="30" />
-7-->F:\NativeAds\nativetemplates\src\main\AndroidManifest.xml
+7-->C:\Users\ebrah\StudioProjects\Native-Ads\nativetemplates\src\main\AndroidManifest.xml
 8
 9    <application android:supportsRtl="true" >
-9-->F:\NativeAds\nativetemplates\src\main\AndroidManifest.xml:3:3-5:17
-9-->F:\NativeAds\nativetemplates\src\main\AndroidManifest.xml:3:16-42
+9-->C:\Users\ebrah\StudioProjects\Native-Ads\nativetemplates\src\main\AndroidManifest.xml:3:3-5:17
+9-->C:\Users\ebrah\StudioProjects\Native-Ads\nativetemplates\src\main\AndroidManifest.xml:3:16-42
 10    </application>
 11
 12</manifest>
